@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Earth Cooperative Bakery | Blue Earth Cooperative</title>
+    <meta name="description" content="Preserving Blue Earth's historic creamery building. Home of Blue Earth Cooperative Bakery.">
+    <meta name="facebook-domain-verification" content="0th7bzwyojlvipt97j5pngwsims147" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-page:         #F5E6D0;
+            --bg-card:         #FDF5E8;
+            --bg-card-alt:     #FAF0E0;
+            --text-heading:    #6B4226;
+            --text-body:       #5A3E2B;
+            --text-light:      #8B7355;
+            --accent-gold:     #C48A2A;
+            --accent-warm:     #D4A84B;
+            --accent-dark:     #8B6530;
+            --border-soft:     #E0CDB5;
+            --border-accent:   #C48A2A;
+            --white:           #FFFDF9;
+            --shadow:          rgba(107, 66, 38, 0.08);
+            --shadow-hover:    rgba(107, 66, 38, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+            background: var(--bg-page);
+            min-height: 100vh;
+            color: var(--text-body);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', Georgia, serif;
+            color: var(--text-heading);
+            line-height: 1.3;
+        }
+
+        .site-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navigation */
+        .site-nav {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 12px 24px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 12px var(--shadow);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .site-nav .nav-brand {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .site-nav .nav-logo {
+            height: 45px;
+            width: auto;
+        }
+
+        .site-nav .nav-links {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+
+        .site-nav .nav-links a {
+            color: var(--text-body);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.92rem;
+            padding: 6px 14px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .site-nav .nav-links a:hover,
+        .site-nav .nav-links a.active {
+            background: var(--accent-gold);
+            color: var(--white);
+        }
+
+        /* Page content */
+        .page-content {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 36px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 12px var(--shadow);
+        }
+
+        .page-content h1 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-soft);
+        }
+
+        .page-content h2 {
+            font-size: 1.5rem;
+            margin: 28px 0 14px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .page-content h3 {
+            font-size: 1.15rem;
+            margin: 18px 0 8px;
+        }
+
+        .page-content p {
+            margin-bottom: 12px;
+            font-size: 1.02rem;
+        }
+
+        .page-content a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .page-content a:hover {
+            color: var(--accent-dark);
+            text-decoration: underline;
+        }
+
+        .page-content ul, .page-content ol {
+            margin: 10px 0 15px 25px;
+        }
+
+        .page-content li {
+            margin-bottom: 6px;
+        }
+
+        .page-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: 10px;
+            padding: 22px;
+            margin-bottom: 16px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--accent-gold);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--white) !important;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 26px;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: 'Source Sans 3', sans-serif;
+            text-decoration: none !important;
+            box-shadow: 0 2px 8px var(--shadow);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px var(--shadow-hover);
+            text-decoration: none !important;
+            color: var(--white) !important;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--accent-gold) !important;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-gold);
+            color: var(--white) !important;
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        /* Menu items */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 14px;
+            margin-top: 14px;
+        }
+
+        .menu-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: 10px;
+            padding: 14px;
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .menu-item:hover {
+            box-shadow: 0 4px 16px var(--shadow-hover);
+        }
+
+        .menu-item-image {
+            width: 72px;
+            height: 72px;
+            border-radius: 8px;
+            flex-shrink: 0;
+            overflow: hidden;
+            background: var(--bg-card-alt);
+        }
+
+        .menu-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .menu-item-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .menu-item-content h3 {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 1.02rem;
+            font-weight: 700;
+            margin: 0 0 3px;
+            color: var(--text-heading);
+        }
+
+        .menu-item-content p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* Hero banner */
+        .hero {
+            background: var(--white);
+            color: var(--text-heading);
+            padding: 36px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            text-align: center;
+            box-shadow: 0 2px 12px var(--shadow);
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            border: none;
+            padding: 0;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-body);
+        }
+
+        .hero .disclaimer {
+            font-size: 0.78rem;
+            margin-top: 10px;
+            color: var(--text-light);
+        }
+
+        .hero img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--text-heading);
+            color: var(--bg-card);
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .site-footer p {
+            margin: 4px 0;
+            font-size: 0.92rem;
+        }
+
+        .site-footer .footer-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .site-footer .small {
+            font-size: 0.82rem;
+            opacity: 0.75;
+        }
+
+        .site-footer a {
+            color: var(--accent-warm);
+            text-decoration: none;
+        }
+
+        .site-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Photo gallery grid */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 14px;
+            margin: 16px 0;
+        }
+
+        .photo-grid img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .photo-grid img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Pull quote */
+        .pull-quote {
+            border-left: 4px solid var(--accent-gold);
+            padding: 16px 24px;
+            margin: 24px 0;
+            background: var(--bg-card);
+            border-radius: 0 8px 8px 0;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-heading);
+        }
+
+        .pull-quote cite {
+            display: block;
+            margin-top: 8px;
+            font-size: 0.88rem;
+            font-style: normal;
+            color: var(--text-light);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 8px 14px;
+            border-radius: 50%;
+            border: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .site-nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .page-content {
+                padding: 22px;
+            }
+
+            .page-content h1 {
+                font-size: 1.6rem;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-row .btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PJ3CQRY01"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-8PJ3CQRY01');
+    </script>
+</head>
+<body>
+    <div class="site-container">
+        <nav class="site-nav">
+    <a href="/" class="nav-brand">
+        <img src="logo.png" alt="Blue Earth Cooperative" class="nav-logo">
+    </a>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/">Bakery</a>
+        <a href="https://blueearthcoop.com/building/">The Building</a>
+        <a href="https://app.simply-bread.co/blueearthcooperativebakery/" target="_blank">Order</a>
+        <a href="https://blueearthcoop.com/bakery/donate/">Donate</a>
+    </div>
+</nav>
+
+        <div class="hero">
+    <img src="logo.png" alt="Blue Earth Cooperative Bakery" style="max-height: 140px; width: auto; margin-bottom: 12px;">
+    <p>Fresh-baked natural sourdough, baked right here in Blue Earth, Minnesota.</p>
+    <p class="disclaimer">*These products are homemade and not subject to state inspection.</p>
+</div>
+
+<div class="btn-row">
+    <a href="https://app.simply-bread.co/blueearthcooperativebakery/" target="_blank" class="btn">Order Online</a>
+    <a href="https://www.facebook.com/profile.php?id=61576711986089" target="_blank" class="btn btn-outline">Follow on Facebook</a>
+</div>
+
+<div class="page-content">
+    <h1>What We Bake</h1>
+
+    <p>Everything starts with our natural sourdough starter, traditional ingredients, and a whole lot of love. Check our <a href="https://app.simply-bread.co/blueearthcooperativebakery/" target="_blank">ordering page</a> to see what's available this week.</p>
+
+    <h2>Sourdough Breads</h2>
+    <div class="menu-grid">
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/bread_softsandwich.png" alt="Soft Sourdough Sandwich Loaf" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Soft Sourdough Sandwich Loaf</h3>
+                <p>Tender crumb and mild tang, perfect for sandwiches.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/bread_englishmuffin.jpeg" alt="Sourdough English Muffin Loaf" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Sourdough English Muffin Loaf</h3>
+                <p>All the nooks and crannies of an English muffin in loaf form.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/bread_wholewheat.jpeg" alt="Whole Wheat Sourdough Loaf" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Whole Wheat Sourdough Loaf</h3>
+                <p>Hearty whole wheat with a beautiful sourdough tang.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/bread_rustic.jpeg" alt="Rustic Sourdough Loaf" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Rustic Sourdough Loaf</h3>
+                <p>Classic crusty sourdough with an open, airy crumb.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Sourdough Rolls</h2>
+    <div class="menu-grid">
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/rolls_sourdough.png" alt="Sourdough Dinner Rolls" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Sourdough Dinner Rolls</h3>
+                <p>Soft, fluffy, and full of sourdough flavor.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/rolls_hawaiian.jpg" alt="Sourdough Hawaiian Rolls" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Sourdough Hawaiian Rolls</h3>
+                <p>With a hint of pineapple sweetness.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Savory Sourdough Focaccia</h2>
+    <div class="menu-grid">
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/focaccia_jalched.jpg" alt="Jalapeño Cheddar Focaccia" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Jalapeño Cheddar Sourdough Focaccia</h3>
+                <p>Packed with sharp cheddar and studded with fresh jalapeño slices.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/focaccia_onioncurd.jpg" alt="Green Onion & Cheese Curd Focaccia" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Green Onion &amp; Cheese Curd Sourdough Focaccia</h3>
+                <p>Fresh green onions and cheese curds folded right into the dough.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/focaccia_picklepizza.jpeg" alt="Pickle Pizza Focaccia" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Pickle Pizza Sourdough Focaccia</h3>
+                <p>A fan favorite with pickles, sauce, and cheese on tangy sourdough.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/focaccia_smokedgruy.jpeg" alt="Smoked Gruyere & Candied Red Onion Focaccia" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Smoked Gruyere &amp; Candied Red Onion Focaccia</h3>
+                <p>Savory and slightly sweet with a smoky aroma.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="photos/margherita-pizza-focaccia.jpg" alt="Margherita Pizza Sourdough Focaccia" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Margherita Pizza Sourdough Focaccia</h3>
+                <p>Fresh mozzarella, tomato, and basil on sourdough.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Sweet Sourdough Focaccia</h2>
+    <div class="menu-grid">
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/focaccia_cinnroll.png" alt="Cinnamon Roll Focaccia" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Cinnamon Roll Sourdough Focaccia</h3>
+                <p>Classic cinnamon roll sweetness meets tangy sourdough.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/focaccia_lemberry.jpg" alt="Lemon Blueberry Focaccia" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Lemon Blueberry Sourdough Focaccia</h3>
+                <p>Tangy lemon and sweet blueberries in perfect harmony.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="photos/raspberry-jelly-donut-focaccia.jpg" alt="Raspberry Jelly Donut Sourdough Focaccia" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Raspberry Jelly Donut Sourdough Focaccia</h3>
+                <p>All the joy of a jelly donut in focaccia form.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Sourdough Scones</h2>
+    <div class="menu-grid">
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/scone_blueberrylemon.jpeg" alt="Sourdough Blueberry Lemon Scones" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Sourdough Blueberry Lemon Scones</h3>
+                <p>Bright blueberry and zesty lemon in a tender sourdough scone.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/scone_raspberryvanilla.jpeg" alt="Sourdough Raspberry Vanilla Scones" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Sourdough Raspberry Vanilla Scones</h3>
+                <p>Sweet raspberry and warm vanilla.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/scone_carrotcake.jpeg" alt="Sourdough Carrot Cake Scones" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Sourdough Carrot Cake Scones</h3>
+                <p>All the flavors of carrot cake in scone form.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/scone_strawberrycheesecake.jpeg" alt="Sourdough Strawberry Cheesecake Scones" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Sourdough Strawberry Cheesecake Scones</h3>
+                <p>Strawberry and cream cheese swirled into every bite.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/scone_jalapcheddar.jpeg" alt="Sharp Cheddar and Jalapeño Sourdough Scones" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Sharp Cheddar &amp; Jalapeño Sourdough Scones</h3>
+                <p>Savory, cheesy, with a little kick.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Kringla Cookies</h2>
+    <div class="menu-grid">
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="photos/traditional-kringla.jpg" alt="Kringla Cookies" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Kringla Cookies</h3>
+                <p>Traditional Norwegian kringla, a Blue Earth heritage recipe.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="photos/lemon-kringla.jpg" alt="Lemon Kringla" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Lemon Kringla</h3>
+                <p>Bright lemon twist on the classic.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="photos/strawberry-kringla.jpg" alt="Strawberry Heart-Shaped Kringla" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Strawberry Heart-Shaped Kringla</h3>
+                <p>Sweet strawberry in a beautiful heart shape.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="photos/pineapple-kringla.jpg" alt="Pineapple Kringla" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Pineapple Kringla</h3>
+                <p>Tropical pineapple flavor in every bite.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="photos/ube-kringla.jpg" alt="Ube Kringla" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Ube Kringla</h3>
+                <p>Purple yam meets Norwegian tradition.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="photos/almond-kringla.jpg" alt="Almond Kringla" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Almond Kringla</h3>
+                <p>Delicate almond flavor in a classic shape.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="photos/pistachio-kringla.jpg" alt="Pistachio Kringla" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Pistachio Kringla</h3>
+                <p>Rich pistachio with a hint of sweetness.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Cookies</h2>
+    <div class="menu-grid">
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="photos/sourdough-chocolate-chip-cookies.jpg" alt="Sourdough Chocolate Chip Cookies" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Sourdough Chocolate Chip Cookies</h3>
+                <p>The classic, elevated with sourdough tang.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/cookie_corn.jpg" alt="Buttered Corn Cookie" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Buttered Corn Cookies</h3>
+                <p>Soft, buttery texture and intense corn flavor.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/cookie_brownsug.jpg" alt="Brown Sugar Sourdough Cookie" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Sourdough Brown Sugar Cookies</h3>
+                <p>Nutty and complex, sweet and addicting.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="photos/crinkle-cookies.jpg" alt="Crinkle Cookies" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Crinkle Cookies</h3>
+                <p>Soft, fudgy, and dusted with powdered sugar.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Sheet Cakes</h2>
+    <div class="menu-grid">
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/sheetcake_texas.jpg" alt="Texas Sheet Cake" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Texas Sheet Cake</h3>
+                <p>Soft, velvety cake with chocolate, cinnamon, and Mexican vanilla.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/sheetcake_whitetexas.jpeg" alt="White Texas Sheet Cake" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>White Texas Sheet Cake</h3>
+                <p>The vanilla version of our beloved Texas sheet cake.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="gallery/sheetcake_chocpb.jpg" alt="Peanut Butter Chocolate Sheet Cake" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Peanut Butter Chocolate Sheet Cake</h3>
+                <p>Rich peanut butter with velvety fudge frosting.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="photos/roasted-strawberry-sheet-cake.jpg" alt="Roasted Strawberry Sheet Cake" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Roasted Strawberry Sheet Cake</h3>
+                <p>Tangy and sweet nostalgic flavor.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="photos/orange-sheet-cake.jpg" alt="Orange Sheet Cake" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Orange Sheet Cake</h3>
+                <p>Bright citrus flavor in a moist, tender cake.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="photos/strawberry-chocolate-sheet-cake.jpg" alt="Strawberry &amp; Chocolate Sheet Cake" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Strawberry &amp; Chocolate Sheet Cake</h3>
+                <p>The perfect combination of berry and chocolate.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <h2>Brownies</h2>
+    <div class="menu-grid">
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="photos/space-brownies.jpg" alt="Sourdough Space Brownies" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Sourdough Space Brownies</h3>
+                <p>Dense, fudgy, out-of-this-world brownies.</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-image"><img src="photos/mexican-hot-chocolate-brownies.jpg" alt="Abuelita Hot Chocolate Brownies" onclick="openLightbox(this.src, this.alt)"></div>
+            <div class="menu-item-content">
+                <h3>Abuelita Hot Chocolate Brownies</h3>
+                <p>Warm Mexican chocolate spices in a rich brownie.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-content">
+    <h2>How to Order</h2>
+    <p>Pre-order your favorites for pickup through our Simply Bread ordering page. Follow us on Facebook for pop-up locations around Blue Earth!</p>
+    <div class="btn-row" style="justify-content: flex-start;">
+        <a href="https://app.simply-bread.co/blueearthcooperativebakery/" target="_blank" class="btn">Order Online</a>
+        <a href="https://www.facebook.com/profile.php?id=61576711986089" target="_blank" class="btn btn-outline">Follow on Facebook</a>
+        <a href="tel:507-519-0003" class="btn btn-outline">Call 507-519-0003</a>
+    </div>
+</div>
+
+        <footer class="site-footer">
+    <p class="footer-name">Blue Earth Cooperative</p>
+    <p class="small">Preserving Blue Earth's historic creamery building since 2024</p>
+    <p style="margin-top: 8px;">
+        <a href="tel:507-519-0003">507-519-0003</a>
+        &nbsp;&bull;&nbsp;
+        <a href="mailto:bakery@blueearthcoop.com">bakery@blueearthcoop.com</a>
+    </p>
+    <p style="margin-top: 6px;">
+        <a href="https://www.facebook.com/profile.php?id=61576711986089" target="_blank">Follow us on Facebook</a>
+    </p>
+</footer>
+
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        function openLightbox(src, alt) {
+            var lb = document.getElementById('lightbox');
+            var img = document.getElementById('lightbox-img');
+            img.src = src;
+            img.alt = alt;
+            lb.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
